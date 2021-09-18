@@ -42,14 +42,28 @@ h6 {
 
 .button-accent {
     background: $accent-color !important;
-    padding: .6em 3em;
+    padding: .7em 3em;
     border-radius: 9rem;
     font-size: 1.5rem;
     border: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .4s ease;
 
 
     &__opposite {
         background-color: $grey-dark !important;
+    }
+
+
+    &:hover,
+    &:focus {
+        background-color: $secondary-color;
+        box-shadow: 0 .25rem 1.75rem #ec22254d;
+        border: none;
+        background-color: $secondary-color !important;
+
     }
 
 }

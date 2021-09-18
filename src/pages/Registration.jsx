@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+// import { useState } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import logo from '../assets/images/logo.svg';
+// import axios from 'axios';
+import Form from '../form/Form';
+// import { useHistory } from 'react-router';
 
+const Registration = () => {
+  // const history = useHistory();
+  // const [loading, setLoading] = useState(false);
 
-
-import Form  from '../form/Form';
-
-class Registration extends Component {
-  result = (values) => {
-    // alert('result is', values);
+  const result = (values) => {
     console.log('result is', values);
   }
 
-  render() {
     return (
         <section className="registration-page">
             <Container>
@@ -29,13 +29,12 @@ class Registration extends Component {
 
                     </Col>
                     <Col md={8}>
-                        <Form onSubmit={this.result} />
+                        <Form onSubmit={result} />
                     </Col>
                 </Row>
           </Container>
         </section>
     );
   }
-}
 
 export default Registration;

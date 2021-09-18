@@ -55,13 +55,20 @@ const SubscriptionDetails = (props) => {
             </Col>
           </Row>
            
-          <div style={{ paddingBottom: 30, display: 'flex', justifyContent: 'space-between', marginTop: '30px'  }}>
-            <Button className="button-accent button-accent__opposite" onClick={previousPage} style={{marginLeft: '20px'}}>
-                &nbsp; Previous
-            </Button>
-            <Button  className="button-accent" type="submit" style={{marginRight: '20px'}} disabled={pristine || submitting}>
-               Register &nbsp;
-            </Button>
+          <div style={{ paddingBottom: 30, marginTop: '30px', textAlign: 'center' }}>
+            <Row>
+              <Col>
+                  <Button className="button-accent button-accent__opposite mb-2" onClick={previousPage} >
+                    &nbsp; Previous
+                </Button>
+              </Col>
+
+              <Col>
+                  <Button  className="button-accent mb-2" type="submit" disabled={pristine || submitting}>
+                    Register &nbsp;
+                  </Button>
+              </Col>
+            </Row>
           </div>
         </div>
       </Col>

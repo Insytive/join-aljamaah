@@ -1,0 +1,167 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Field, reduxForm } from 'redux-form';
+import validate from '../validation/validation';
+import FormInput from '../components/FormInput'
+import {
+  mobile,
+  captialize,
+  idNumber
+} from '../validation/normalize';
+import {
+  Button,
+  Col,
+  FormGroup,
+  Label,
+  Input
+} from 'reactstrap';
+
+
+const GeneralForm = (props) => {
+  const { handleSubmit } = props;
+  return (
+    <form onSubmit={handleSubmit}>
+      <Col sm="12">
+        <div className="registration-page__form">
+            <FormGroup row>
+              <Col xs="12" lg="6">
+                <Field
+                  name="first_name"
+                  type="text"
+                  component={FormInput}
+                  label="First Name(s) "
+                  inputPlaceHolder="First Name *"
+                  normalize={captialize}
+                />
+              </Col>
+
+               <Col xs="12" lg="6">
+                <Field
+                  name="last_name"
+                  type="text"
+                  component={FormInput}
+                  label="Surname"
+                  inputPlaceHolder="Surname *"
+                  normalize={captialize}
+                />
+              </Col>
+            </FormGroup>
+
+            
+            <FormGroup row>
+              <Col xs="12" lg="12">
+                <Field
+                  name="id_number"
+                  type="text"
+                  component={FormInput}
+                  label="ID Number *"
+                  inputPlaceHolder="ID Number"
+                  normalize={idNumber}
+                />
+              </Col>
+            </FormGroup>
+
+            <FormGroup row>
+              <Col xs="12" lg="12">
+                <Field
+                  name="phone"
+                  type="text"
+                  component={FormInput}
+                  label="Mobile No *"
+                  inputPlaceHolder="+27"
+                  normalize={mobile}
+                />
+              </Col>
+          </FormGroup>
+
+          
+            <FormGroup row>
+              <Col xs="12" lg="12">
+                <Field
+                  name="email_address"
+                  type="email"
+                  component={FormInput}
+                  label="Email "
+                  inputPlaceHolder="Email "
+                  // normalize={email}
+                />
+              </Col>
+            </FormGroup>
+
+           <FormGroup row>
+              <Col xs="12" lg="6">
+                <FormGroup row>
+                  <Col xs="12" lg="6">
+                    <Label>Gender</Label>
+                  </Col>
+                  <Col xs="6" lg="12">
+                    <FormGroup check className="radio">
+                      <Input
+                        className="form-check-input"
+                        type="radio"
+                        id="radio1"
+                        name="radios"
+                        value="option1"
+                      />
+                      <Label
+                        check
+                        className="form-check-label"
+                        htmlFor="radio1"
+                      >
+                        Male
+                      </Label>
+                    </FormGroup>
+
+                    <FormGroup check className="radio">
+                      <Input
+                        className="form-check-input"
+                        type="radio"
+                        id="radio2"
+                        name="radios"
+                        value="option2"
+                      />
+                      <Label
+                        check
+                        className="form-check-label"
+                        htmlFor="radio2"
+                      >
+                        Female
+                      </Label>
+                    </FormGroup>
+                  </Col>
+                </FormGroup>
+              </Col>
+              </FormGroup>
+            
+          
+           <FormGroup row>
+              <Field
+                name="address"
+                type="textarea"
+                component={FormInput}
+                label="Address *"
+                inputPlaceHolder="Enter Address"
+              />
+            </FormGroup>
+          
+          <div style={{ paddingBottom: 30 }}>
+            <Button  className="button-accent" type="submit" style={{marginRight: '20px', marginTop: '30px'}}>
+               Next 
+            </Button>
+          </div>
+        </div>
+      </Col>
+    </form>
+  );
+};
+
+GeneralForm.propTypes = {
+  handleSubmit: PropTypes.func
+};
+
+export default reduxForm({
+  form: 'wizardForm',
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true,
+  validate
+})(GeneralForm);

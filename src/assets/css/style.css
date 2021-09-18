@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700; }
+
+.button-accent {
+  background: #078745 !important;
+  padding: .6em 3em;
+  border-radius: 9rem;
+  font-size: 1.5rem;
+  border: none; }
+  .button-accent__opposite {
+    background-color: #8d9297 !important; }
+
+.help-block.error-color.form-text {
+  color: #ff0000 !important;
+  font-size: 1.3rem;
+  padding: 0;
+  margin: 0; }
+
+.registration-page {
+  background-color: #fafafa;
+  padding: 9rem 0;
+  font-size: 1.4rem; }
+  .registration-page__card {
+    padding: 4rem;
+    background-color: #fff;
+    border-radius: .8rem;
+    box-shadow: 0 0.25rem 1.75rem rgba(30, 34, 40, 0.07);
+    border-top: 10px solid #078745; }
+  .registration-page__header {
+    margin-bottom: 4rem; }
+    .registration-page__header--main {
+      color: #2e3d44;
+      font-size: 3.2rem;
+      line-height: 4.2rem; }
+    .registration-page__header--sub {
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      color: #ec2227;
+      margin-top: 1.4rem; }
+    .registration-page__header:after {
+      content: "";
+      height: 4px;
+      width: 80px;
+      border-radius: 9rem;
+      background-color: #078745;
+      display: inline-block; }
+  .registration-page .form-group {
+    margin-bottom: .5rem; }
+    .registration-page .form-group .form-control {
+      padding-left: 2em;
+      padding-right: 0;
+      border: none;
+      border-radius: .5rem;
+      background: #F4F6F8;
+      font-size: 1.4rem;
+      color: #8d9297 !important; }
+      .registration-page .form-group .form-control:not(textarea) {
+        height: 4.65rem; }
+      .registration-page .form-group .form-control:focus, .registration-page .form-group .form-control:hover {
+        background: #d7d7d7;
+        border: none;
+        outline: none;
+        box-shadow: none; }
+      .registration-page .form-group .form-control::-webkit-input-placeholder {
+        font-size: 1.4rem; }
+    .registration-page .form-group label {
+      margin-bottom: .5rem;
+      color: #8d9297; }
+  .registration-page textarea {
+    height: calc(4.65rem *2); }
+  .registration-page__form {
+    background-color: #fff;
+    margin-top: 4rem; }
+    .registration-page__form--subscription h4 {
+      text-transform: uppercase;
+      color: #078745; }

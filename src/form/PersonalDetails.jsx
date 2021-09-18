@@ -13,21 +13,12 @@ import {
   Col,
   FormGroup,
   Label,
-  Input
 } from 'reactstrap';
 
 
 const PersonalDetails = (props) => {
   const { handleSubmit } = props;
-  const [gender, setGender] = React.useState("");
-
-  const onChange = (event) => {
-    setGender(event.target.value)
-
-    console.log(gender)
-  }
-
-
+  
   return (
     <form onSubmit={handleSubmit}>
       <Col sm="12">

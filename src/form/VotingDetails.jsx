@@ -1,20 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import validate from '../validation/validation';
 import FormInput from '../components/FormInput';
-import Select from 'react-select';
-// import {
-//   upper,
-//   aadhaar,
-//   pan,
-//   salary
-// } from '../validation/normalize';
 import {
   Button,
   Col,
   FormGroup,
-  Input,
   Label
 } from 'reactstrap';
 
@@ -23,13 +15,6 @@ import {
 
 const VotingDetails = (props) => {
   const { handleSubmit, previousPage } = props;
-  const [province, setProvince] = useState("")
-
-  const handleSelect = (e) => {
-    setProvince(e.target.value);
-    console.log(province);
-  }
-
 
   return (
     <form onSubmit={handleSubmit}>

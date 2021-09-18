@@ -83,6 +83,13 @@ h6 {
 
     }
 
+    &__logo,
+    &__header {
+        @media only screen and (max-width: 992px) {
+            text-align: center;
+        }
+    }
+
     &__header {
         margin-bottom: 4rem;
 

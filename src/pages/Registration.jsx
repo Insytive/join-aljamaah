@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import logo from '../assets/images/logo.svg';
 
 
 
@@ -19,8 +20,13 @@ class Registration extends Component {
                     <Col md={4}>
                       <div className="registration-page__header">
                         <h2 className="registration-page__header--main">Registration Form</h2>
-                      <h4 className="registration-page__header--sub"> 2020/21 Membership application</h4>
+                        <h4 className="registration-page__header--sub"> 2020/21 Membership application</h4>
                       </div>
+
+                      <div className="text-left mb-5 registration-page__logo">
+                         <img src={logo} alt="Aljama Logo" height="200" />
+                      </div>
+
                     </Col>
                     <Col md={8}>
                         <Form onSubmit={this.result} />

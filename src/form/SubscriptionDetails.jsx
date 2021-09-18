@@ -1,13 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {  reduxForm } from 'redux-form';
-import validate  from '../validation/validation';
+import validate from '../validation/validation';
 
-// import {
-//   captialize,
-//   age,
-//   salary,
-// } from '../validation/normalize';
 import {
   Button,
   Col,

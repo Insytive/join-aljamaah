@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
 import validate from '../validation/validation';
 import FormInput from '../components/FormInput';
+import Select from 'react-select';
 // import {
 //   upper,
 //   aadhaar,
@@ -17,8 +18,19 @@ import {
   Label
 } from 'reactstrap';
 
+
+
+
 const VotingDetails = (props) => {
   const { handleSubmit, previousPage } = props;
+  const [province, setProvince] = useState("")
+
+  const handleSelect = (e) => {
+    setProvince(e.target.value);
+    console.log(province);
+  }
+
+
   return (
     <form onSubmit={handleSubmit}>
       <Col sm="12">
@@ -47,15 +59,15 @@ const VotingDetails = (props) => {
            
           <FormGroup row>
             <Col xs="12" lg="6">
-              <Label for="province"> Province</Label>
-                  <Input
-                    name="province"
+              <Label for="Province">Province</Label>
+                  <Field
+                    name="provice"
                     type="select"
-                    label="Surbub *"
-                    component={FormInput}
-                  
-              >
-                      <option disabled selected>Select Province</option>
+                    component="select"
+                    className="form-control"
+                  >
+                
+                      <option defaultValue="province" disabled>Select Province</option>
                       <option value="Eastern Cape">Eastern Cape</option>
                       <option value="Free State">Free State</option>
                       <option value="Gauteng">Gauteng</option>
@@ -65,7 +77,8 @@ const VotingDetails = (props) => {
                       <option value="Northern Cape">Northern Cape</option>
                       <option value="North West">North West</option>
                       <option value="Western Cape">Western Cape</option>
-                    </Input>
+              
+                    </Field>
                 </Col>
               
 
@@ -102,46 +115,16 @@ const VotingDetails = (props) => {
             </FormGroup>
             <FormGroup row>
               <Col xs="12" lg="12">
-                <FormGroup row>
                   <Col xs="12" lg="12">
-                    <Label>Are you a first time Voter</Label>
+                  <Label for="voter">Are you a first time Voter? </Label>
+                
+                  <FormGroup check className="radio">
+                      <label><Field id="radio2"  name="voter" component="input" type="radio" value="Yes" className="form-check-input form-check-input" /> Yes</label>
+                  </FormGroup>
+                  <FormGroup check className="radio">
+                      <label><Field id="radio2" name="voter" component="input" type="radio" value="No" className="form-check-input form-check-input" /> No </label>
+                  </FormGroup>
                   </Col>
-                  <Col xs="6" lg="12">
-                    <FormGroup check className="radio">
-                      <Input
-                        className="form-check-input"
-                        type="radio"
-                        id="radio1"
-                        name="radios"
-                        value="option1"
-                      />
-                      <Label
-                        check
-                        className="form-check-label"
-                        htmlFor="radio1"
-                      >
-                        Yes
-                      </Label>
-                    </FormGroup>
-
-                    <FormGroup check className="radio">
-                      <Input
-                        className="form-check-input"
-                        type="radio"
-                        id="radio2"
-                        name="radios"
-                        value="option2"
-                      />
-                      <Label
-                        check
-                        className="form-check-label"
-                        htmlFor="radio2"
-                      >
-                        No
-                      </Label>
-                    </FormGroup>
-                  </Col>
-                </FormGroup>
               </Col>
             
             </FormGroup>

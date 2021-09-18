@@ -17,7 +17,8 @@ import {
 const SubscriptionDetails = (props) => {
 
   const { handleSubmit, pristine, previousPage, submitting } = props;
-  console.log(pristine);
+
+  
   return (
     <form onSubmit={handleSubmit}>
       <Col xs="12" sm="12">

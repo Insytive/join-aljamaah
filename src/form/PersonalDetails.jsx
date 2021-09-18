@@ -19,6 +19,15 @@ import {
 
 const PersonalDetails = (props) => {
   const { handleSubmit } = props;
+  const [gender, setGender] = React.useState("");
+
+  const onChange = (event) => {
+    setGender(event.target.value)
+
+    console.log(gender)
+  }
+
+
   return (
     <form onSubmit={handleSubmit}>
       <Col sm="12">
@@ -89,47 +98,14 @@ const PersonalDetails = (props) => {
             </FormGroup>
 
            <FormGroup row>
-              <Col xs="12" lg="6">
-                <FormGroup row>
-                  <Col xs="12" lg="6">
-                    <Label>Gender</Label>
-                  </Col>
-                  <Col xs="6" lg="12">
-                    <FormGroup check className="radio">
-                      <Input
-                        className="form-check-input"
-                        type="radio"
-                        id="radio1"
-                        name="radios"
-                        value="option1"
-                      />
-                      <Label
-                        check
-                        className="form-check-label"
-                        htmlFor="radio1"
-                      >
-                        Male
-                      </Label>
-                    </FormGroup>
-
-                    <FormGroup check className="radio">
-                      <Input
-                        className="form-check-input"
-                        type="radio"
-                        id="radio2"
-                        name="radios"
-                        value="option2"
-                      />
-                      <Label
-                        check
-                        className="form-check-label"
-                        htmlFor="radio2"
-                      >
-                        Female
-                      </Label>
-                    </FormGroup>
-                  </Col>
-                </FormGroup>
+            <Col xs="12" lg="6">
+              <Label for="Gender"> Gender </Label>
+                  <FormGroup check className="radio">
+                      <label><Field id="radio3"  name="gender" component="input" type="radio" value="Male" className="form-check-input form-check-input" /> Male</label>
+                  </FormGroup>
+                  <FormGroup check className="radio">
+                      <label><Field id="radio3" name="gender" component="input" type="radio" value="Female" className="form-check-input form-check-input" /> Female </label>
+                  </FormGroup>
               </Col>
               </FormGroup>
             

@@ -21,9 +21,9 @@ const validate = (values) => {
     errors.phone = 'Invalid mobile number';
   }
 
-  // if (values.email_address && !/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(values.email_address)) {
-  //   errors.email_address = 'Email is not valid';
-  // }
+  if (values.email_address && !/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(values.email_address)) {
+    errors.email_address = 'Email is not valid';
+  }
 
   if (!values.voting_station) {
     errors.voting_station = 'Voting Station is Required';
@@ -39,6 +39,11 @@ const validate = (values) => {
 
   if (!values.address) {
     errors.address = 'Address Required';
+  }
+
+
+  if (!values.province) {
+    errors.province = 'Province Required';
   }
 
   return errors;

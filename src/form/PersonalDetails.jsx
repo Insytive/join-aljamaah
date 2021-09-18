@@ -17,7 +17,7 @@ import {
 } from 'reactstrap';
 
 
-const GeneralForm = (props) => {
+const PersonalDetails = (props) => {
   const { handleSubmit } = props;
   return (
     <form onSubmit={handleSubmit}>
@@ -155,7 +155,7 @@ const GeneralForm = (props) => {
   );
 };
 
-GeneralForm.propTypes = {
+PersonalDetails.propTypes = {
   handleSubmit: PropTypes.func
 };
 
@@ -164,4 +164,4 @@ export default reduxForm({
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
   validate
-})(GeneralForm);
+})(PersonalDetails);

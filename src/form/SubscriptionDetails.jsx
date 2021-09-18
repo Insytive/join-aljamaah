@@ -14,7 +14,7 @@ import {
   Row,
 } from 'reactstrap';
 
-const NomineeDetailsForm = (props) => {
+const SubscriptionDetails = (props) => {
 
   const { handleSubmit, pristine, previousPage, submitting } = props;
   console.log(pristine);
@@ -73,7 +73,7 @@ const NomineeDetailsForm = (props) => {
   );
 };
 
-NomineeDetailsForm.propTypes = {
+SubscriptionDetails.propTypes = {
   handleSubmit: PropTypes.func,
   pristine: PropTypes.bool,
   previousPage: PropTypes.func,
@@ -85,4 +85,4 @@ export default reduxForm({
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
   validate
-})(NomineeDetailsForm);
+})(SubscriptionDetails);

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Stepper from 'react-stepper-horizontal';
-import GeneralForm from './GeneralForm';
-import PersonalDetailsForm from './PersonalDetailsForm';
-import NomineeDetailsForm from './NomineeDetailsForm';
+import PersonalDetails from './PersonalDetails';
+import VotingDetails from './VotingDetails';
+import SubscriptionDetails from './SubscriptionDetails';
 
 class Form extends Component {
 
@@ -36,15 +36,15 @@ class Form extends Component {
     return (
       <div className="registration-page__card">
         <Stepper steps={ steps } activeStep={ page } activeColor={"#078745"} completeColor={"#078745"} />
-        {page === 0 && <GeneralForm onSubmit={this.nextPage} />}
+        {page === 0 && <PersonalDetails onSubmit={this.nextPage} />}
         {page === 1 && (
-          <PersonalDetailsForm
+          <VotingDetails
             previousPage={this.previousPage}
             onSubmit={this.nextPage}
           />
         )}
         {page === 2 && (
-          <NomineeDetailsForm
+          <SubscriptionDetails
             previousPage={this.previousPage}
             onSubmit={onSubmit}
           />

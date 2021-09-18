@@ -17,7 +17,7 @@ import {
   Label
 } from 'reactstrap';
 
-const PersonalDetailsForm = (props) => {
+const VotingDetails = (props) => {
   const { handleSubmit, previousPage } = props;
   return (
     <form onSubmit={handleSubmit}>
@@ -160,7 +160,7 @@ const PersonalDetailsForm = (props) => {
   );
 };
 
-PersonalDetailsForm.propTypes = {
+VotingDetails.propTypes = {
   handleSubmit: PropTypes.func,
   previousPage: PropTypes.func
 };
@@ -170,4 +170,4 @@ export default reduxForm({
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
   validate,
-})(PersonalDetailsForm);
+})(VotingDetails);

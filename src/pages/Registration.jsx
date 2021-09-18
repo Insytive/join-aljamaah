@@ -7,6 +7,7 @@ import Form  from '../form/Form';
 
 class Registration extends Component {
   result = (values) => {
+    // alert('result is', values);
     console.log('result is', values);
   }
 

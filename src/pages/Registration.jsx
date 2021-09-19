@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'reactstrap';
 import logo from '../assets/images/logo.svg';
 import axios from 'axios';
 import Form from '../form/Form';
+import Footer from '../components/layout/Footer';
 
 
 const Registration = () => {
@@ -29,7 +30,9 @@ const Registration = () => {
                     <Col md={8}>
                         <Form onSubmit={result} />
                     </Col>
-                </Row>
+                  </Row>
+                  
+                  <Footer />
           </Container>
         </section>
     );

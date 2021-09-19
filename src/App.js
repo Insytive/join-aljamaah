@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-         <Registration className="registration-page" />
+        <Registration className="registration-page" />
       </React.Fragment>
     );
   }

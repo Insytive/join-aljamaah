@@ -7,7 +7,8 @@ import {
   Button,
   Col,
   FormGroup,
-  Label
+  Label,
+  Row
 } from 'reactstrap';
 
 
@@ -112,16 +113,20 @@ const VotingDetails = (props) => {
                   </Col>
               </Col>
             
-            </FormGroup>
-          <div style={{ paddingBottom: 30, display: 'flex', justifyContent: 'space-between', marginTop: '30px' }}>
-            <Button  className="button-accent button-accent__opposite" onClick={previousPage} style={{marginLeft: '20px'}}>
-              <i className="fa fa-chevron-left" />
-                &nbsp; Previous
-            </Button>
-            <Button className="button-accent" type="submit" style={{marginRight: '20px'}}>
+          </FormGroup>
+          
+          <Row style={{ paddingBottom: 30,  marginTop: 30, textAlign: 'center'}}>
+            <Col>
+              <Button  className="button-accent button-accent__opposite" onClick={previousPage}>
+                   Previous
+             </Button>
+            </Col>
+            <Col>
+              <Button className="button-accent" type="submit" >
                Next 
             </Button>
-          </div>
+            </Col>
+          </Row>
         </div>
       </Col>
     </form>

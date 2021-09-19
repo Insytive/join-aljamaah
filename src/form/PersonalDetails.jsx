@@ -68,7 +68,7 @@ const PersonalDetails = (props) => {
                   type="text"
                   component={FormInput}
                   label="Mobile No *"
-                  inputPlaceHolder="+27"
+                  inputPlaceHolder="078"
                   normalize={mobile}
                 />
               </Col>

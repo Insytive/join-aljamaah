@@ -1,16 +1,14 @@
-// import { useState } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import logo from '../assets/images/logo.svg';
-// import axios from 'axios';
+import axios from 'axios';
 import Form from '../form/Form';
-// import { useHistory } from 'react-router';
+
 
 const Registration = () => {
-  // const history = useHistory();
-  // const [loading, setLoading] = useState(false);
+  
 
   const result = (values) => {
-    console.log('result is', values);
+    axios.post('https://reqres.in/api/register', values)
   }
 
     return (

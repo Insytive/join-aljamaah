@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import logo from '../assets/images/logo.svg';
-import axios from 'axios';
 import Form from '../form/Form';
 import Footer from '../components/layout/Footer';
  import { ToastContainer, toast } from 'react-toastify';
@@ -17,42 +16,62 @@ const Registration = () => {
   // const [isLoading, setIsLoading] = useState(false);
   
   const successMessage = () =>  toast.success("Succesfully Added!");
-
-
-
     
-    const result = async (values) => {
-      await axios.post('https://app.aljama-ah.org.za/api/members', values)
-        .then((response) => {
-          if (response.status === 200) {
-            setSuccess(true);
-            history.push('/registration-success')
-          }
+    // const result = async (values) => {
+    //   await axios.post('https://app.aljama-ah.org.za/api/members', values)
+    //     .then((response) => {
+    //       if (response.status === 200) {
+    //         setSuccess(true);
+    //         history.push('/registration-success');
+    //       }
+    //     })
+    //     .catch((err) => {
+    //       console.error(err);
+    //     })
+    // };
+ 
+  
+  const postData = (values) => {
+      
+
+        fetch('https://app.aljama-ah.org.za/api/members', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: values,
         })
-        .catch((err) => {
-          console.error(err);
+          .then(response => {
+            if (response.status === 200) {
+              setSuccess(true);
+
+              setTimeout(function() {
+                 history.push('/registration-success');
+              }, 5003);
+            }
         })
-    };
+        .then(values => {
+          console.log('Success:', values);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+  }
 
    
 
     return (
       <section className="registration-page">
-
         
          <ToastContainer>
               {success && (
-               <>
+               <React.Fragment>
                   {successMessage()}
-               </>
+               </React.Fragment>
           )};
-          
+        </ToastContainer>
         
-         </ToastContainer>
-         {/* <button onClick={notify}>Notify!</button>
-        <ToastContainer />
-               */}
-        
+
             <Container>
                 <Row>
                     <Col md={4}>
@@ -67,7 +86,7 @@ const Registration = () => {
 
                     </Col>
                     <Col md={8}>
-                        <Form onSubmit={result} />
+                        <Form onSubmit={postData} />
                     </Col>
                   </Row>
                   

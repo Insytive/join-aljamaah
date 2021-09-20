@@ -35,7 +35,7 @@ class Form extends Component {
 
     return (
       <div className="registration-page__card">
-        <Stepper steps={ steps } activeStep={ page } activeColor={"#078745"} completeColor={"#078745"} />
+        <Stepper steps={steps} activeStep={page} activeColor={"#078745"} completeColor={"#078745"} titleFontSize={14} />
         {page === 0 && <PersonalDetails onSubmit={this.nextPage} />}
         {page === 1 && (
           <VotingDetails

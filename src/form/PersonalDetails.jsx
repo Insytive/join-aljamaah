@@ -78,7 +78,7 @@ const PersonalDetails = (props) => {
             <FormGroup row>
               <Col xs="12" lg="12">
                 <Field
-                  name="email_address"
+                  name="email"
                   type="email"
                   component={FormInput}
                   label="Email "

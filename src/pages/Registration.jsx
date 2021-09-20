@@ -1,19 +1,58 @@
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import logo from '../assets/images/logo.svg';
 import axios from 'axios';
 import Form from '../form/Form';
 import Footer from '../components/layout/Footer';
+ import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Registration = () => {
-  
+  const history = useHistory();
 
-  const result = (values) => {
-    axios.post('https://reqres.in/api/register', values)
-  }
+
+  const [success, setSuccess] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
+  
+  const successMessage = () =>  toast.success("Succesfully Added!");
+
+
+
+    
+    const result = async (values) => {
+      await axios.post('https://app.aljama-ah.org.za/api/members', values)
+        .then((response) => {
+          if (response.status === 200) {
+            setSuccess(true);
+            history.push('/registration-success')
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        })
+    };
+
+   
 
     return (
-        <section className="registration-page">
+      <section className="registration-page">
+
+        
+         <ToastContainer>
+              {success && (
+               <>
+                  {successMessage()}
+               </>
+          )};
+          
+        
+         </ToastContainer>
+         {/* <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+               */}
+        
             <Container>
                 <Row>
                     <Col md={4}>

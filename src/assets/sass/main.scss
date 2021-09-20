@@ -29,7 +29,9 @@ body {
     font-family: $font-stack;
     font-size: 1.6rem;
     background-color: $grey-light;
+
 }
+
 
 
 h1,
@@ -79,13 +81,17 @@ h6 {
 }
 
 
-
+.form-check-input:checked {
+    background-color: $accent-color;
+    border-color: $accent-color;
+    box-shadow : 0 .25rem .75rem $accent-color;
+}
 
 
 // REGISTRATION PAGE
 
 .registration-page {
-    padding: 9rem 0;
+    padding: 9rem 0 2rem 0;
     font-size: 1.4rem;
 
     &__card {

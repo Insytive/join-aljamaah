@@ -54,15 +54,15 @@ const VotingDetails = (props) => {
                   >
                 
                       <option defaultValue="province" disabled>Select Province</option>
-                      <option value="Eastern Cape">Eastern Cape</option>
-                      <option value="Free State">Free State</option>
-                      <option value="Gauteng">Gauteng</option>
-                      <option value="KwaZulu-Natal">KwaZulu-Natal</option>
-                      <option value="Limpopo">Limpopo</option>
-                      <option value="Mpumalanga">Mpumalanga</option>
-                      <option value="Northern Cape">Northern Cape</option>
-                      <option value="North West">North West</option>
-                      <option value="Western Cape">Western Cape</option>
+                      <option value={0}>Eastern Cape</option>
+                      <option value={1}>Free State</option>
+                      <option value={2}>Gauteng</option>
+                      <option value={3}>KwaZulu-Natal</option>
+                      <option value={4}>Limpopo</option>
+                      <option value={5}>Mpumalanga</option>
+                      <option value={6}>Northern Cape</option>
+                      <option value={7}>North West</option>
+                      <option value={4}>Western Cape</option>
               
                     </Field>
                 </Col>
@@ -105,10 +105,10 @@ const VotingDetails = (props) => {
                   <Label for="voter">Are you a first time Voter? </Label>
                 
                   <FormGroup check className="radio">
-                      <label><Field id="radio2"  name="voter" component="input" type="radio" value="Yes" className="form-check-input form-check-input" /> Yes</label>
+                      <label><Field id="radio2"  name="first_time_voter" component="input" type="radio" value={1} className="form-check-input form-check-input" /> Yes</label>
                   </FormGroup>
                   <FormGroup check className="radio">
-                      <label><Field id="radio2" name="voter" component="input" type="radio" value="No" className="form-check-input form-check-input" /> No </label>
+                      <label><Field id="radio2" name="first_time_voter" component="input" type="radio" value={0} className="form-check-input form-check-input" /> No </label>
                   </FormGroup>
                   </Col>
               </Col>

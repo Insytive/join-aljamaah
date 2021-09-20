@@ -39,8 +39,13 @@ h6 {
   padding: 0;
   margin: 0; }
 
+.form-check-input:checked {
+  background-color: #078745;
+  border-color: #078745;
+  box-shadow: 0 0.25rem 0.75rem #078745; }
+
 .registration-page {
-  padding: 9rem 0;
+  padding: 9rem 0 2rem 0;
   font-size: 1.4rem; }
   .registration-page__card {
     padding: 4rem;

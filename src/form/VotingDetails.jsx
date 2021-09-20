@@ -47,23 +47,21 @@ const VotingDetails = (props) => {
             <Col xs="12" lg="6">
               <Label for="Province">Province</Label>
                   <Field
-                    name="provice"
+                    name="province"
                     type="select"
                     component="select"
                     className="form-control"
                   >
-                
                       <option defaultValue="province" disabled>Select Province</option>
-                      <option value={0}>Eastern Cape</option>
-                      <option value={1}>Free State</option>
-                      <option value={2}>Gauteng</option>
-                      <option value={3}>KwaZulu-Natal</option>
-                      <option value={4}>Limpopo</option>
-                      <option value={5}>Mpumalanga</option>
-                      <option value={6}>Northern Cape</option>
-                      <option value={7}>North West</option>
-                      <option value={4}>Western Cape</option>
-              
+                      <option value="EC">Eastern Cape</option>
+                      <option value="FS">Free State</option>
+                      <option value="GT">Gauteng</option>
+                      <option value="KZN">KwaZulu-Natal</option>
+                      <option value="L">Limpopo</option>
+                      <option value="MP">Mpumalanga</option>
+                      <option value="NC">Northern Cape</option>
+                      <option value="NW">North West</option>
+                      <option value="WC">Western Cape</option>
                     </Field>
                 </Col>
               

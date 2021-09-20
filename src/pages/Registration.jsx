@@ -6,59 +6,50 @@ import Form from '../form/Form';
 import Footer from '../components/layout/Footer';
  import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import axios from 'axios';
 
 const Registration = () => {
   const history = useHistory();
 
-
   const [success, setSuccess] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+
   
   const successMessage = () =>  toast.success("Succesfully Added!");
+  const errorMessage = () =>  toast.error("Something went wrong!");
     
-    // const result = async (values) => {
-    //   await axios.post('https://app.aljama-ah.org.za/api/members', values)
-    //     .then((response) => {
-    //       if (response.status === 200) {
-    //         setSuccess(true);
-    //         history.push('/registration-success');
-    //       }
-    //     })
-    //     .catch((err) => {
-    //       console.error(err);
-    //     })
-    // };
- 
-  
-  const postData = (values) => {
-      
 
-        fetch('https://app.aljama-ah.org.za/api/members', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: values,
-        })
-          .then(response => {
-            if (response.status === 200) {
-              setSuccess(true);
+  const result = (values) => {
+    
+    const payload = {
+      first_name: values.first_name,
+      id_number: values.id_number,
+      last_name: values.last_name,
+      address: values.address,
+      voting_station: values.voting_station,
+      ward: values.ward,
+      province: values.province,
+      first_time_voter: parseInt(values.first_time_voter),
+      gender: parseInt(values.gender),
+      district: values.district,
+      surburb: values.surburb,
+      metro: values.metro,
+    }
 
-              setTimeout(function() {
-                 history.push('/registration-success');
-              }, 5003);
-            }
-        })
-        .then(values => {
-          console.log('Success:', values);
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
+    axios.post('https://app.aljama-ah.org.za/api/members', payload)
+      .then(response => {
+        if (response.status === 200) {
+          setSuccess(true);
+          history.push('/registration-success')
+        }
+      })
+      .catch(err => {
+        setError(err);
+      });
   }
 
-   
+
+
 
     return (
       <section className="registration-page">
@@ -69,6 +60,12 @@ const Registration = () => {
                   {successMessage()}
                </React.Fragment>
           )};
+          
+          {error && (
+            <React.Fragment>
+              {errorMessage()}
+            </React.Fragment>
+          )}
         </ToastContainer>
         
 
@@ -86,7 +83,7 @@ const Registration = () => {
 
                     </Col>
                     <Col md={8}>
-                        <Form onSubmit={postData} />
+                        <Form onSubmit={result} />
                     </Col>
                   </Row>
                   

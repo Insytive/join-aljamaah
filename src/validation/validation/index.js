@@ -15,36 +15,36 @@ const validate = (values) => {
   }
 
 
-  if (!values.phone) {
-    errors.phone = 'Mobile Number Required';
-  } else if (values.phone && !/^(\+27|0)[6-8][0-9]{8}$/.test(values.phone)) {
-    errors.phone = 'Invalid mobile number';
-  }
+  // if (!values.phone) {
+  //   errors.phone = 'Mobile Number Required';
+  // } else if (values.phone && !/^(\+27|0)[6-8][0-9]{8}$/.test(values.phone)) {
+  //   errors.phone = 'Invalid mobile number';
+  // }
 
-  if (values.email && !/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(values.email)) {
-    errors.email = 'Email is not valid';
-  }
+  // if (values.email && !/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(values.email)) {
+  //   errors.email = 'Email is not valid';
+  // }
 
   if (!values.voting_station) {
     errors.voting_station = 'Voting Station is Required';
   }
 
-  if (!values.surburb) {
-    errors.surburb = 'Surbub is Required';
-  }
+  // if (!values.surburb) {
+  //   errors.surburb = 'Surbub is Required';
+  // }
 
-  if (!values.ward) {
-    errors.ward = 'Ward is Required';
-  }
+  // if (!values.ward) {
+  //   errors.ward = 'Ward is Required';
+  // }
 
-  if (!values.address) {
-    errors.address = 'Address Required';
-  }
+  // if (!values.address) {
+  //   errors.address = 'Address Required';
+  // }
 
 
-  if (!values.province) {
-    errors.province = 'Province Required';
-  }
+  // if (!values.province) {
+  //   errors.province = 'Province Required';
+  // }
 
   return errors;
 };

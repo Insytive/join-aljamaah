@@ -16,52 +16,51 @@ const Registration = () => {
 
   
   const successMessage = () =>  toast.success("Succesfully Added!");
-  const errorMessage = () =>  toast.error("Something went wrong!");
+  const errorMessage = () =>  toast.error(error);
     
 
   const result = (values) => {
-    
     const payload = {
       first_name: values.first_name,
-      id_number: values.id_number,
       last_name: values.last_name,
+      gender: values.gender,
       address: values.address,
       voting_station: values.voting_station,
-      ward: values.ward,
-      province: values.province,
-      first_time_voter: parseInt(values.first_time_voter),
-      gender: parseInt(values.gender),
-      district: values.district,
-      surburb: values.surburb,
-      metro: values.metro,
+      id_number: values.id_number,
+      first_time_voter: parseInt(values.first_time_voter)
     }
-
+    
     axios.post('https://app.aljama-ah.org.za/api/members', payload)
-      .then(response => {
-        if (response.status === 200) {
-          setSuccess(true);
-          history.push('/registration-success')
-        }
-      })
-      .catch(err => {
-        setError(err);
+      .then(
+        response => {
+          setSuccess(true)
+
+          setTimeout(() => {
+             history.push('/registration-success');
+          }, 5000);
+            
+          console.log(response.data);
+        })        
+      
+      .catch(error => {
+        setError(error.response.data.message);
+        console.log(error.response.data);
       });
+  
+
   }
 
 
-
-
     return (
-      <section className="registration-page">
-        
+      <section className="registration-page">  
          <ToastContainer>
-              {success && (
+              {success  && (
                <React.Fragment>
                   {successMessage()}
                </React.Fragment>
           )};
           
-          {error && (
+          {(error && !success) && (
             <React.Fragment>
               {errorMessage()}
             </React.Fragment>

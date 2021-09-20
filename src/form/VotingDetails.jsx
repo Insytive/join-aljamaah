@@ -53,15 +53,15 @@ const VotingDetails = (props) => {
                     className="form-control"
                   >
                       <option defaultValue="province" disabled>Select Province</option>
-                      <option value="EC">Eastern Cape</option>
-                      <option value="FS">Free State</option>
-                      <option value="GT">Gauteng</option>
-                      <option value="KZN">KwaZulu-Natal</option>
-                      <option value="L">Limpopo</option>
-                      <option value="MP">Mpumalanga</option>
-                      <option value="NC">Northern Cape</option>
-                      <option value="NW">North West</option>
-                      <option value="WC">Western Cape</option>
+                      <option value={0}>Eastern Cape</option>
+                      <option value={1}>Free State</option>
+                <option value={2}>Gauteng</option>
+                      <option value={3}>KwaZulu-Natal</option>
+                      <option value={4}>Limpopo</option>
+                <option value={ 5}>Mpumalanga</option>
+                      <option value={6}>Northern Cape</option>
+                <option value={7}>North West</option>
+                      <option value={8}>Western Cape</option>
                     </Field>
                 </Col>
               
@@ -103,10 +103,10 @@ const VotingDetails = (props) => {
                   <Label for="voter">Are you a first time Voter? </Label>
                 
                   <FormGroup check className="radio">
-                      <label><Field id="radio2"  name="first_time_voter" component="input" type="radio" value={1} className="form-check-input form-check-input" /> Yes</label>
+                      <label><Field id="radio2"  name="first_time_voter" component="input" type="radio" value="0" className="form-check-input form-check-input" /> Yes</label>
                   </FormGroup>
                   <FormGroup check className="radio">
-                      <label><Field id="radio2" name="first_time_voter" component="input" type="radio" value={0} className="form-check-input form-check-input" /> No </label>
+                      <label><Field id="radio2" name="first_time_voter" component="input" type="radio" value="1" className="form-check-input form-check-input" /> No </label>
                   </FormGroup>
                   </Col>
               </Col>

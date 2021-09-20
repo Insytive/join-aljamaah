@@ -92,10 +92,10 @@ const PersonalDetails = (props) => {
             <Col xs="12" lg="6">
               <Label for="Gender"> Gender </Label>
                   <FormGroup check className="radio">
-                      <label><Field id="radio3"  name="gender" component="input" type="radio" value={0} className="form-check-input form-check-input" /> Male</label>
+                      <label><Field id="radio3"  name="gender" component="input" type="radio" value="0" className="form-check-input form-check-input" /> Male</label>
                   </FormGroup>
                   <FormGroup check className="radio">
-                <label><Field id="radio3" name="gender" component="input" type="radio" value={1} className="form-check-input form-check-input" /> Female </label>
+                <label><Field id="radio3" name="gender" component="input" type="radio" value="1" className="form-check-input form-check-input" /> Female </label>
                   </FormGroup>
               </Col>
               </FormGroup>

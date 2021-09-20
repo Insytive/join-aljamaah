@@ -94,7 +94,7 @@ const PersonalDetails = (props) => {
                   <FormGroup check className="radio">
                       <label><Field id="radio3"  name="gender" component="input" type="radio" value="Male" className="form-check-input form-check-input" /> Male</label>
                   </FormGroup>
-                  <FormGroup check className="radio">
+                <FormGroup check className="radio">
                       <label><Field id="radio3" name="gender" component="input" type="radio" value="Female" className="form-check-input form-check-input" /> Female </label>
                   </FormGroup>
               </Col>

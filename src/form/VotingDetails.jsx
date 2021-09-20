@@ -13,7 +13,6 @@ import {
 
 
 
-
 const VotingDetails = (props) => {
   const { handleSubmit, previousPage } = props;
 
@@ -54,15 +53,15 @@ const VotingDetails = (props) => {
                   >
                 
                       <option defaultValue="province" disabled>Select Province</option>
-                      <option value={0}>Eastern Cape</option>
-                      <option value={1}>Free State</option>
-                      <option value={2}>Gauteng</option>
-                      <option value={3}>KwaZulu-Natal</option>
-                      <option value={4}>Limpopo</option>
-                      <option value={5}>Mpumalanga</option>
-                      <option value={6}>Northern Cape</option>
-                      <option value={7}>North West</option>
-                      <option value={4}>Western Cape</option>
+                      <option value="EC">Eastern Cape</option>
+                      <option value="FS">Free State</option>
+                      <option value="GT">Gauteng</option>
+                      <option value="KZN">KwaZulu-Natal</option>
+                      <option value="L">Limpopo</option>
+                      <option value="MP">Mpumalanga</option>
+                      <option value="NC">Northern Cape</option>
+                      <option value="NW">North West</option>
+                      <option value="WC">Western Cape</option>
               
                     </Field>
                 </Col>
@@ -99,20 +98,15 @@ const VotingDetails = (props) => {
                 />
               </Col>
             </FormGroup>
-            <FormGroup row>
+            <FormGroup>
               <Col xs="12" lg="12">
-                  <Col xs="12" lg="12">
-                  <Label for="voter">Are you a first time Voter? </Label>
-                
-                  <FormGroup check className="radio">
-                      <label><Field id="radio2"  name="first_time_voter" component="input" type="radio" value={1} className="form-check-input form-check-input" /> Yes</label>
-                  </FormGroup>
-                  <FormGroup check className="radio">
-                      <label><Field id="radio2" name="first_time_voter" component="input" type="radio" value={0} className="form-check-input form-check-input" /> No </label>
-                  </FormGroup>
-                  </Col>
+                  <div className="d-flex mt-3">
+                    {/* <Field label="Are you a first time Voter? "  id="exampleCustomInline" name="first_time_voter" component="input" type="checkbox" value={1} className="form-check-input form-check-input" /> */}
+                    <Field inputPlaceHolder="Are u a first time voter"  name="first_time_voter" component={FormInput}  type="number" className="form-check-input form-check-input" />
+                    
+                    <Label for="first_time_voter" style={{ marginLeft: '17px'}}>Are you a first time voter?</Label>
+                  </div>
               </Col>
-            
           </FormGroup>
           
           <Row style={{ paddingBottom: 30,  marginTop: 30, textAlign: 'center'}}>

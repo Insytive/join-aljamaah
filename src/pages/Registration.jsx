@@ -18,28 +18,25 @@ const Registration = () => {
   
   const successMessage = () =>  toast.success("Succesfully Added!");
 
-
-
-    
-    const result = async (values) => {
-      await axios.post('https://app.aljama-ah.org.za/api/members', values)
-        .then((response) => {
-          if (response.status === 200) {
-            setSuccess(true);
-            history.push('/registration-success')
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-        })
+  const result = (values) => {
+      
+      axios.post('https://app.aljama-ah.org.za/api/members', values)
+        // .then((response) => {
+        //   if (response.status === 200) {
+        //     setSuccess(true);
+        //     history.push('/registration-success');
+        //     console.log(typeof values, values);
+        //   }
+        // })
+        // .catch((err) => {
+        //   console.error(err);
+        // })
     };
 
    
 
     return (
       <section className="registration-page">
-
-        
          <ToastContainer>
               {success && (
                <>

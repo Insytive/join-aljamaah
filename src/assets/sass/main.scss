@@ -84,7 +84,7 @@ h6 {
 .form-check-input:checked {
     background-color: $accent-color;
     border-color: $accent-color;
-    box-shadow : 0 .25rem .75rem $accent-color;
+    box-shadow: 0 .25rem .75rem $accent-color;
 }
 
 
@@ -195,5 +195,25 @@ h6 {
                 color: $accent-color;
             }
         }
+    }
+}
+
+
+.success-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h3 {
+        line-height: 6rem;
+        font-size: 4rem;
+    }
+
+    svg {
+        height: 10rem;
+        width: 10rem;
+        fill: $accent-color;
     }
 }

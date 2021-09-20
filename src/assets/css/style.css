@@ -104,3 +104,17 @@ h6 {
     .registration-page__form--subscription h4 {
       text-transform: uppercase;
       color: #078745; }
+
+.success-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  .success-page h3 {
+    line-height: 6rem;
+    font-size: 4rem; }
+  .success-page svg {
+    height: 10rem;
+    width: 10rem;
+    fill: #078745; }

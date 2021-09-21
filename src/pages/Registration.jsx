@@ -21,13 +21,13 @@ const Registration = () => {
 
   const result = (values) => {
     const payload = {
-      first_name: values.first_name,
-      last_name: values.last_name,
-      gender: values.gender,
-      address: values.address,
-      voting_station: values.voting_station,
-      id_number: values.id_number,
-      first_time_voter: parseInt(values.first_time_voter)
+        first_name: values.first_name,
+        last_name: values.last_name,
+        gender: values.gender,
+        address: values.address,
+        voting_station: values.voting_station,
+        id_number: values.id_number,
+        first_time_voter: parseInt(values.first_time_voter)
     }
     
     axios.post('https://app.aljama-ah.org.za/api/members', payload)

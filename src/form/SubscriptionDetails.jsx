@@ -23,9 +23,10 @@ const SubscriptionDetails = (props) => {
               <Col xs="12" lg="12">
                 <h4 className="mb-4"> Annual Membership Subscription </h4> 
                 <ol>
-                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id praesentium nulla culpa libero, aliquid repellat nisi necessitatibus delectus. Dolores mollitia consectetur deserunt, consequatur dolor esse totam repellat nemo culpa libero!</li>
-                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae, voluptas molestiae soluta exercitationem ipsam praesentium id repellat dolor laudantium quisquam nisi porro esse enim repellendus sint. Similique, eveniet magnam!</li>
-                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nam distinctio corporis tenetur maiores cupiditate.</li>
+                  <li> I understand and agree that the membership year is from 1 July 2021 to 30 June 2022. The annual  membership subscription fee is R15,00 and hat I must apply for membership each year, and at least one (1) calendar month before the expiration of my annual membership.</li>
+                  <li>I understand that there are different types of memberships. I understand and agree that a card carrying member who may attend party meetings and vote. A card carrying member is a member who has paid for membership has been accepted by the working committee. A card carrying member is a memmber who has paid two year's succesive historical membership fees as well as the current year's membership fees. A card carrying member is someone whom an official membership card for the current years membership has been signed and issued by the party leader.</li>
+                <li>All membership fees must be paid into the membership bank account of Al Jama-ah and a member must forwards proof of payment to the party Register/s and retain copy of such proof, which will serve the purposes of payment.</li>
+                <li>I understand and agree that I have no right or entitlement to have membership renewed for the period after 30th June 2021 and that If I am a public representative, I shall cease to be such a public representative. A percentage of my salary as public representative and determined by the working committee is payable to Al Jama-ah on a monthly basis, failing which my membership may cease, upon any non-payment. I accept that as a public representative, I have the duty to enact a stop order from my salary to ensure that payments reach the bank account of Al Jama-ah timeously and every month.  </li>
                 </ol>
             </Col>
 

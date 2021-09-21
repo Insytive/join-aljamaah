@@ -27,7 +27,14 @@ const Registration = () => {
         address: values.address,
         voting_station: values.voting_station,
         id_number: values.id_number,
-        first_time_voter: parseInt(values.first_time_voter)
+        first_time_voter: parseInt(values.first_time_voter),
+        ward: values.ward,
+        province: values.province,
+        surburb: values.surburb, 
+        metro: values.metro, 
+        district: values.district, 
+        email: values.email, 
+        phone: values.phone,
     }
     
     axios.post('https://app.aljama-ah.org.za/api/members', payload)

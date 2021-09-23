@@ -199,6 +199,21 @@ h6 {
 }
 
 
+
+// Main Footer
+
+.main-footer {
+    &__icon {
+        padding: 0 .8rem;
+
+        svg {
+            stroke: $secondary-color;
+            height: 1.8rem;
+            width: 1.8rem;
+        }
+    }
+}
+
 .success-page {
     height: 100vh;
     display: flex;
